@@ -1,2 +1,2 @@
-# Exerc-ciosPoo-Java
+# ExerciciosPoo-Java
 Exercícios Propostos em Treinamento Java
