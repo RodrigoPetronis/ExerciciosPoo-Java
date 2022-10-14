@@ -1,0 +1,44 @@
+/*
+ 2. Crie uma classe para implementar uma ContaCorrente.
+A classe deve possuir os seguintes atributos: número da conta, nome do correntista e saldo. 
+Os métodos são os seguintes: alterarNome, depósito esaque;
+No construtor, saldo é opcional, com valor default zero e os demais atributos são obrigatórios.*/
+package com.mycompany.exerciciopoo2;
+
+import java.util.Scanner;
+
+public class ExercicioPoo2 {
+
+    public static void main(String[] args) {
+        String nome = "Nome não informado";
+        int conta = 9999;
+        float saldo = 0.0f;
+        char resp = 's';
+
+        while (resp == 's' || resp == 'S') {
+            Scanner leitor = new Scanner(System.in);
+            System.out.print("Numero da conta: ");
+            conta = leitor.nextInt();
+            System.out.print("Nome do Correntista: ");
+            nome = leitor.next();
+            System.out.print("Saldo inicial: ");
+            saldo = leitor.nextFloat();
+            
+            ContaCorrente cc = new ContaCorrente(conta, nome, saldo);
+            
+            cc.alterarNome("Nome Alterado");
+            System.out.print("Faça um depósito: ");
+            cc.deposito(leitor.nextFloat());
+            System.out.print("Faça um saque: ");
+            cc.saque(leitor.nextFloat());
+
+            System.out.println("O número da conta é " + cc.getNumConta() + " \n"
+                    + "O nome do Correntista é " + cc.getNome() + " \n"
+                    + "O Saldo da Conta Corrente é " + cc.getSaldo());
+            
+            System.out.print("Deseja continuar ? S / N :");
+            resp = leitor.next().charAt(0);
+        }
+
+    }
+}
